@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnmatthew - Professional Resume</title>
+    
+    <!-- Bootstrap CSS with Replit theme -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Johnmatthew</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Johnmatthew</h1>
+                    <p class="lead mb-4">Professional • Dedicated • Results-Driven</p>
+                    <p class="fs-5 text-muted mb-5">Building exceptional solutions and driving innovation in technology</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="#about" class="btn btn-outline-primary btn-lg">Learn More</a>
+                        <a href="#contact" class="btn btn-secondary btn-lg">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">About Me</h2>
+                    <div class="card bg-secondary">
+                        <div class="card-body p-5">
+                            <p class="lead mb-4">
+                                I am a dedicated professional with a passion for excellence and innovation. 
+                                My career is built on a foundation of continuous learning, problem-solving, 
+                                and delivering results that exceed expectations.
+                            </p>
+                            <p class="mb-4">
+                                With expertise spanning multiple domains, I bring a unique perspective to 
+                                every project I undertake. I believe in the power of collaboration, 
+                                creative thinking, and strategic execution to achieve outstanding outcomes.
+                            </p>
+                            <p class="mb-0">
+                                I am committed to professional growth and staying at the forefront of 
+                                industry trends and best practices. My approach combines technical 
+                                proficiency with strong communication skills and a results-oriented mindset.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-body-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Education</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-graduation-cap text-primary me-3 fs-4"></i>
+                                        <h5 class="card-title mb-0">Master's Degree</h5>
+                                    </div>
+                                    <h6 class="card-subtitle mb-2 text-muted">University Name</h6>
+                                    <p class="card-text">Field of Study</p>
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar-alt me-2"></i>
+                                        Year - Year
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-graduation-cap text-primary me-3 fs-4"></i>
+                                        <h5 class="card-title mb-0">Bachelor's Degree</h5>
+                                    </div>
+                                    <h6 class="card-subtitle mb-2 text-muted">University Name</h6>
+                                    <p class="card-text">Field of Study</p>
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar-alt me-2"></i>
+                                        Year - Year
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Professional Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Senior Position Title</h5>
+                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                                        </div>
+                                        <span class="badge bg-primary">Current - Present</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Led strategic initiatives and managed cross-functional teams to deliver 
+                                        exceptional results. Implemented innovative solutions that improved 
+                                        efficiency and drove business growth.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Leadership</span>
+                                        <span class="badge bg-secondary">Strategy</span>
+                                        <span class="badge bg-secondary">Innovation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Position Title</h5>
+                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                                        </div>
+                                        <span class="badge bg-outline-secondary">Year - Year</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Developed and executed comprehensive projects while collaborating with 
+                                        diverse teams. Focused on delivering high-quality solutions and 
+                                        maintaining excellent client relationships.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Project Management</span>
+                                        <span class="badge bg-secondary">Client Relations</span>
+                                        <span class="badge bg-secondary">Quality Assurance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Entry Level Position</h5>
+                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                                        </div>
+                                        <span class="badge bg-outline-secondary">Year - Year</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Started career with strong foundation in core competencies. 
+                                        Demonstrated rapid learning ability and contributed to team success 
+                                        through dedication and analytical thinking.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Analysis</span>
+                                        <span class="badge bg-secondary">Learning</span>
+                                        <span class="badge bg-secondary">Teamwork</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-body-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Get In Touch</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-3 fs-1"></i>
+                                    <h5 class="card-title">Email</h5>
+                                    <p class="card-text">
+                                        <a href="mailto:john.matthew@example.com" class="text-decoration-none">
+                                            john.matthew@example.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-globe text-primary mb-3 fs-1"></i>
+                                    <h5 class="card-title">Website</h5>
+                                    <p class="card-text">
+                                        <a href="https://johnmatthew.com" class="text-decoration-none" target="_blank">
+                                            www.johnmatthew.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="text-center mt-5">
+                        <h5 class="mb-4">Connect With Me</h5>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="https://linkedin.com/in/johnmatthew" class="btn btn-outline-primary" target="_blank">
+                                <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                            </a>
+                            <a href="https://github.com/johnmatthew" class="btn btn-outline-primary" target="_blank">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://twitter.com/johnmatthew" class="btn btn-outline-primary" target="_blank">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-muted">&copy; 2025 Johnmatthew. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
