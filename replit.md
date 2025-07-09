@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a professional, responsive personal resume website for JohnMatthew Garcia built with Flask and Bootstrap. The application serves as an online portfolio showcasing his data science expertise, network engineering experience, and academic credentials at UC Berkeley. The site features authentic content from his resume and LinkedIn profile, targeting potential employers in tech, data science, and network engineering fields.
+This is a professional, responsive personal resume website for JohnMatthew Garcia built with Flask and Bootstrap. The application serves as an online portfolio showcasing his data science expertise, network engineering experience, and academic credentials. As a UC Berkeley Data Science graduate and incoming Georgia Tech Computer Science Master's student, the site features authentic content targeting potential employers in tech, data science, and network engineering fields.
 
 ## User Preferences
 
@@ -68,7 +68,7 @@ Preferred communication style: Simple, everyday language.
 ✓ Added professional profile photo from Golden Gate Bridge
 ✓ Integrated real contact information (Berkeley email and phone)
 ✓ Added comprehensive work experience from UC Berkeley positions
-✓ Included education details (UC Berkeley Data Science BA, Fresno City College Economics AA)
+✓ Included education details (Georgia Tech CS MS incoming, UC Berkeley Data Science BA completed, Fresno City College Economics AA)
 ✓ Added Technical Skills & Projects section with real project descriptions
 ✓ Updated navigation to include Skills section
 ✓ Added Linktree link for easy access to all personal links
