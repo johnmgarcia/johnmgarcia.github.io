@@ -1,0 +1,74 @@
+# Masterplan for Johnmatthew's Resume Website
+
+## App Overview and Objectives
+
+This is a simple, responsive personal website for Johnmatthew. Its primary goal is to serve as an online resume, providing a clear and concise overview of academic and professional credentials.
+
+## Target Audience
+
+* Potential employers or collaborators
+* Academic institutions
+* Professional network connections
+
+## Core Features and Functionality
+
+* Intro section with a headline
+* Short biography
+* Contact information (email and website)
+* Education history
+* Work experience
+* Social media links
+
+## High-Level Technical Stack Recommendations
+
+* **Frontend Framework**: HTML/CSS (with optional Bootstrap or Tailwind CSS for responsiveness)
+* **Platform**: Hosted on Replit
+* **Responsive Design**: Mobile and desktop compatibility via media queries or a CSS framework
+* **Deployment**: Replit's built-in web hosting
+
+## Conceptual Data Model
+
+No database needed. All content will be static for now. Placeholder sections to be manually updated:
+
+* Bio Text
+* Education Items
+* Work Experience Items
+* Social Media URLs
+
+## User Interface Design Principles
+
+* Clean, simple layout
+* Mobile-first responsive design
+* Clear hierarchy with section headers
+* Easy navigation (one-page scroll or simple menu)
+
+## Security Considerations
+
+* Avoid sensitive personal data
+* Email is displayed as contact info – consider obfuscating it to prevent spam bots (e.g., using a contact form later)
+
+## Development Phases or Milestones
+
+1. **Set Up Replit Project**
+2. **Build Static HTML Structure**
+3. **Apply Responsive Styling (CSS/Framework)**
+4. **Add Placeholder Content**
+5. **Test on Desktop and Mobile Views**
+6. **Replace Placeholders with Real Content**
+
+## Potential Challenges and Solutions
+
+* **Challenge**: Maintaining mobile responsiveness
+
+  * **Solution**: Use a CSS framework or test frequently on different screen sizes
+
+* **Challenge**: Spam through email display
+
+  * **Solution**: Use email obfuscation or a contact form in the future
+
+## Future Expansion Possibilities
+
+* Add a downloadable resume PDF
+* Include a contact form
+* Add a blog or updates section
+* Use a CMS or lightweight backend if dynamic content is needed later
