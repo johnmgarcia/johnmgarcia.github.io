@@ -41,7 +41,7 @@ Preferred communication style: Simple, everyday language.
 - Semantic HTML structure for accessibility
 - Font Awesome integration for icons
 - Real contact information (jm.garcia@berkeley.edu, (415) 802-4846)
-- Authentic LinkedIn (jmg-ml) and GitHub (johnmgarcia) profiles
+- Authentic LinkedIn (jmg-ml), GitHub (johnmgarcia), and Linktree (johnmatthew_g) profiles
 
 ### 3. Custom Styling (`static/css/style.css`)
 - Hero section with gradient background and pattern overlay
@@ -71,6 +71,7 @@ Preferred communication style: Simple, everyday language.
 ✓ Included education details (UC Berkeley Data Science BA, Fresno City College Economics AA)
 ✓ Added Technical Skills & Projects section with real project descriptions
 ✓ Updated navigation to include Skills section
+✓ Added Linktree link for easy access to all personal links
 ✓ Enhanced styling with profile image hover effects
 
 ## External Dependencies
