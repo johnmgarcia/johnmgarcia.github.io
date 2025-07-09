@@ -1,4 +1,17 @@
-/* Custom styles for Johnmatthew's Resume Website */
+/* Custom styles for JohnMatthew Garcia's Resume Website */
+
+/* Profile Image */
+.profile-image {
+    object-fit: cover;
+    border: 4px solid var(--bs-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
 
 /* Hero Section */
 .hero-section {

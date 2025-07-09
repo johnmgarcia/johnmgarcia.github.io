@@ -1,8 +1,8 @@
-# Johnmatthew's Resume Website
+# JohnMatthew Garcia's Resume Website
 
 ## Overview
 
-This is a simple, responsive personal resume website for Johnmatthew built with Flask and Bootstrap. The application serves as an online portfolio showcasing academic and professional credentials through a clean, single-page design. The site is designed to be hosted on Replit and targets potential employers, collaborators, and professional network connections.
+This is a professional, responsive personal resume website for JohnMatthew Garcia built with Flask and Bootstrap. The application serves as an online portfolio showcasing his data science expertise, network engineering experience, and academic credentials at UC Berkeley. The site features authentic content from his resume and LinkedIn profile, targeting potential employers in tech, data science, and network engineering fields.
 
 ## User Preferences
 
@@ -36,16 +36,19 @@ Preferred communication style: Simple, everyday language.
 - Serves on all interfaces (0.0.0.0:5000)
 
 ### 2. Template Structure (`templates/index.html`)
-- Single-page layout with fixed navigation
-- Bootstrap-based responsive design
+- Single-page layout with fixed navigation including Skills section
+- Bootstrap-based responsive design with professional profile photo
 - Semantic HTML structure for accessibility
 - Font Awesome integration for icons
+- Real contact information (jm.garcia@berkeley.edu, (415) 802-4846)
+- Authentic LinkedIn (jmg-ml) and GitHub (johnmgarcia) profiles
 
 ### 3. Custom Styling (`static/css/style.css`)
 - Hero section with gradient background and pattern overlay
 - Timeline styles for experience/education sections
 - Smooth scrolling implementation
 - Navigation transition effects
+- Profile image styling with hover effects and border
 
 ### 4. Interactive Features (`static/js/script.js`)
 - Smooth scrolling navigation
@@ -55,9 +58,20 @@ Preferred communication style: Simple, everyday language.
 ## Data Flow
 
 1. **Request Flow**: User requests → Flask app → Single route handler → Template rendering
-2. **Static Assets**: Browser requests static files → Flask serves from `/static/` directory
-3. **Navigation**: JavaScript handles smooth scrolling and active state management
-4. **Content Display**: All content is static and rendered server-side in the initial page load
+2. **Static Assets**: Browser requests static files → Flask serves from `/static/` directory (including profile photo)
+3. **Navigation**: JavaScript handles smooth scrolling and active state management for 5 sections
+4. **Content Display**: All authentic content is static and rendered server-side in the initial page load
+
+## Recent Changes (January 2025)
+
+✓ Updated with authentic personal information from JohnMatthew Garcia's resume and LinkedIn
+✓ Added professional profile photo from Golden Gate Bridge
+✓ Integrated real contact information (Berkeley email and phone)
+✓ Added comprehensive work experience from UC Berkeley positions
+✓ Included education details (UC Berkeley Data Science BA, Fresno City College Economics AA)
+✓ Added Technical Skills & Projects section with real project descriptions
+✓ Updated navigation to include Skills section
+✓ Enhanced styling with profile image hover effects
 
 ## External Dependencies
 

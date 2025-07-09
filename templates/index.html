@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johnmatthew - Professional Resume</title>
+    <title>JohnMatthew Garcia - Data Science Professional</title>
     
     <!-- Bootstrap CSS with Replit theme -->
     <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Johnmatthew</a>
+            <a class="navbar-brand fw-bold" href="#home">JohnMatthew Garcia</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,6 +34,9 @@
                         <a class="nav-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -46,9 +49,12 @@
         <div class="container">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">Johnmatthew</h1>
-                    <p class="lead mb-4">Professional • Dedicated • Results-Driven</p>
-                    <p class="fs-5 text-muted mb-5">Building exceptional solutions and driving innovation in technology</p>
+                    <div class="mb-4">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="JohnMatthew Garcia" class="rounded-circle profile-image mb-4" width="200" height="200">
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">JohnMatthew Garcia</h1>
+                    <p class="lead mb-4">Network Engineer Assistant @ UC Berkeley | Data Science Student</p>
+                    <p class="fs-5 text-muted mb-5">Leveraging data science expertise to enhance network systems and support cutting-edge research</p>
                     <div class="d-flex gap-3 justify-content-center">
                         <a href="#about" class="btn btn-outline-primary btn-lg">Learn More</a>
                         <a href="#contact" class="btn btn-secondary btn-lg">Get In Touch</a>
@@ -67,19 +73,25 @@
                     <div class="card bg-secondary">
                         <div class="card-body p-5">
                             <p class="lead mb-4">
-                                I am a dedicated professional with a passion for excellence and innovation. 
-                                My career is built on a foundation of continuous learning, problem-solving, 
-                                and delivering results that exceed expectations.
+                                In my current role as a Network Engineer Assistant at UC Berkeley, I 
+                                leverage my data science background to enhance network systems and 
+                                contribute to cutting-edge research support. My daily activities involve 
+                                delivering comprehensive technical assistance and fostering a collaborative 
+                                environment for data-intensive projects at UC Berkeley's D-Lab.
                             </p>
                             <p class="mb-4">
-                                With expertise spanning multiple domains, I bring a unique perspective to 
-                                every project I undertake. I believe in the power of collaboration, 
-                                creative thinking, and strategic execution to achieve outstanding outcomes.
+                                With expertise in statistics, finance, and marketing, I support the 
+                                academic community by enabling data-driven decision-making and advancing 
+                                research methodologies. I provide hands-on network support across campus 
+                                by replacing switches, restoring WiFi, configuring ports and IP addresses, 
+                                and troubleshooting connectivity issues.
                             </p>
                             <p class="mb-0">
-                                I am committed to professional growth and staying at the forefront of 
-                                industry trends and best practices. My approach combines technical 
-                                proficiency with strong communication skills and a results-oriented mindset.
+                                My commitment to technology and education is reflected in the tailored 
+                                advice and support I provide to my peers, ensuring their research 
+                                endeavors are both innovative and impactful. I believe in continuous 
+                                learning and staying at the forefront of data science and network 
+                                engineering best practices.
                             </p>
                         </div>
                     </div>
@@ -100,13 +112,13 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <i class="fas fa-graduation-cap text-primary me-3 fs-4"></i>
-                                        <h5 class="card-title mb-0">Master's Degree</h5>
+                                        <h5 class="card-title mb-0">Bachelor's Degree</h5>
                                     </div>
-                                    <h6 class="card-subtitle mb-2 text-muted">University Name</h6>
-                                    <p class="card-text">Field of Study</p>
+                                    <h6 class="card-subtitle mb-2 text-muted">University of California, Berkeley</h6>
+                                    <p class="card-text">Data Science - BA</p>
                                     <small class="text-muted">
                                         <i class="fas fa-calendar-alt me-2"></i>
-                                        Year - Year
+                                        Current Student
                                     </small>
                                 </div>
                             </div>
@@ -116,13 +128,13 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
                                         <i class="fas fa-graduation-cap text-primary me-3 fs-4"></i>
-                                        <h5 class="card-title mb-0">Bachelor's Degree</h5>
+                                        <h5 class="card-title mb-0">Associate's Degree</h5>
                                     </div>
-                                    <h6 class="card-subtitle mb-2 text-muted">University Name</h6>
-                                    <p class="card-text">Field of Study</p>
+                                    <h6 class="card-subtitle mb-2 text-muted">Fresno City College</h6>
+                                    <p class="card-text">Economics - AA</p>
                                     <small class="text-muted">
                                         <i class="fas fa-calendar-alt me-2"></i>
-                                        Year - Year
+                                        Completed
                                     </small>
                                 </div>
                             </div>
@@ -145,20 +157,23 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start mb-3">
                                         <div>
-                                            <h5 class="card-title mb-1">Senior Position Title</h5>
-                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                                            <h5 class="card-title mb-1">Network Engineering Assistant</h5>
+                                            <h6 class="card-subtitle text-muted">UC Berkeley – Berkeley IT</h6>
                                         </div>
-                                        <span class="badge bg-primary">Current - Present</span>
+                                        <span class="badge bg-primary">Aug 2024 - Present</span>
                                     </div>
                                     <p class="card-text mb-3">
-                                        Led strategic initiatives and managed cross-functional teams to deliver 
-                                        exceptional results. Implemented innovative solutions that improved 
-                                        efficiency and drove business growth.
+                                        Performed hands-on network support across campus by replacing switches, 
+                                        restoring WiFi, configuring ports and IP addresses, and troubleshooting 
+                                        connectivity issues. Utilized Python/Bash scripts and conducted preventive 
+                                        maintenance on equipment. Collaborated with HelpDesk, IST-NOS, and vendors 
+                                        to resolve technical issues and maintain documentation.
                                     </p>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-secondary">Leadership</span>
-                                        <span class="badge bg-secondary">Strategy</span>
-                                        <span class="badge bg-secondary">Innovation</span>
+                                        <span class="badge bg-secondary">Network Administration</span>
+                                        <span class="badge bg-secondary">Python</span>
+                                        <span class="badge bg-secondary">Bash Scripting</span>
+                                        <span class="badge bg-secondary">Technical Support</span>
                                     </div>
                                 </div>
                             </div>
@@ -169,44 +184,211 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start mb-3">
                                         <div>
-                                            <h5 class="card-title mb-1">Position Title</h5>
-                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                                            <h5 class="card-title mb-1">Undergraduate Technician</h5>
+                                            <h6 class="card-subtitle text-muted">UC Berkeley – D-Lab</h6>
                                         </div>
-                                        <span class="badge bg-outline-secondary">Year - Year</span>
+                                        <span class="badge bg-outline-secondary">Jan 2024 - Present</span>
                                     </div>
                                     <p class="card-text mb-3">
-                                        Developed and executed comprehensive projects while collaborating with 
-                                        diverse teams. Focused on delivering high-quality solutions and 
-                                        maintaining excellent client relationships.
+                                        Provided cross-disciplinary services by delivering in-depth consulting, 
+                                        advising, and access to staff support for software or infrastructure needs. 
+                                        Assisted graduate students, faculty, and staff in advancing world-class 
+                                        research in data-intensive social sciences and humanities. Offered 
+                                        comprehensive research support throughout the full research lifecycle.
                                     </p>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-secondary">Project Management</span>
+                                        <span class="badge bg-secondary">Research Support</span>
+                                        <span class="badge bg-secondary">Data Science</span>
+                                        <span class="badge bg-secondary">Consulting</span>
+                                        <span class="badge bg-secondary">Statistics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Peer Advisor</h5>
+                                            <h6 class="card-subtitle text-muted">UC Berkeley – Centers for Educational Equity and Excellence (CE3)</h6>
+                                        </div>
+                                        <span class="badge bg-outline-secondary">Sep 2022 - Sep 2023</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Provided tailored advising and support to members of UC Berkeley's diverse 
+                                        re-entry student population, which includes approximately 2,000 undergraduates 
+                                        aged 25 and older. Offered guidance and mentorship to help students navigate 
+                                        their academic journey.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Academic Advising</span>
+                                        <span class="badge bg-secondary">Mentorship</span>
+                                        <span class="badge bg-secondary">Student Support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Mathematics Tutor</h5>
+                                            <h6 class="card-subtitle text-muted">Fresno City College</h6>
+                                        </div>
+                                        <span class="badge bg-outline-secondary">Sep 2019 - Aug 2020</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Provided tutoring to over 20 college students per month in Economics and 
+                                        Math courses, including trigonometry, calculus, linear algebra, differential 
+                                        equations, and formal logic. Monitored and recorded student progress after 
+                                        each appointment to ensure effective learning outcomes.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Mathematics</span>
+                                        <span class="badge bg-secondary">Economics</span>
+                                        <span class="badge bg-secondary">Tutoring</span>
+                                        <span class="badge bg-secondary">Student Assessment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h5 class="card-title mb-1">Licensed Real Estate Agent</h5>
+                                            <h6 class="card-subtitle text-muted">Austin Boom Real Estate</h6>
+                                        </div>
+                                        <span class="badge bg-outline-secondary">2008 - 2012</span>
+                                    </div>
+                                    <p class="card-text mb-3">
+                                        Specialized in high-end downtown apartments and condos. Conducted comprehensive 
+                                        market research, showcased luxury properties, managed client relationships, and 
+                                        utilized various marketing strategies. Provided detailed market analysis and 
+                                        investment guidance to support informed decision-making.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary">Real Estate</span>
+                                        <span class="badge bg-secondary">Market Research</span>
                                         <span class="badge bg-secondary">Client Relations</span>
-                                        <span class="badge bg-secondary">Quality Assurance</span>
+                                        <span class="badge bg-secondary">Marketing</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="timeline-item mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-start mb-3">
-                                        <div>
-                                            <h5 class="card-title mb-1">Entry Level Position</h5>
-                                            <h6 class="card-subtitle text-muted">Company Name</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Projects Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Technical Skills & Projects</h2>
+                    
+                    <!-- Technical Skills -->
+                    <div class="mb-5">
+                        <h4 class="mb-4">Technical Skills</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Programming Languages</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary">Python</span>
+                                            <span class="badge bg-primary">SQL</span>
+                                            <span class="badge bg-primary">Java</span>
                                         </div>
-                                        <span class="badge bg-outline-secondary">Year - Year</span>
                                     </div>
-                                    <p class="card-text mb-3">
-                                        Started career with strong foundation in core competencies. 
-                                        Demonstrated rapid learning ability and contributed to team success 
-                                        through dedication and analytical thinking.
-                                    </p>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-secondary">Analysis</span>
-                                        <span class="badge bg-secondary">Learning</span>
-                                        <span class="badge bg-secondary">Teamwork</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Machine Learning</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-success">Pandas</span>
+                                            <span class="badge bg-success">Scikit-learn</span>
+                                            <span class="badge bg-success">TensorFlow</span>
+                                            <span class="badge bg-success">PyTorch</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Data Science</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-info">Data Wrangling</span>
+                                            <span class="badge bg-info">EDA</span>
+                                            <span class="badge bg-info">A/B Testing</span>
+                                            <span class="badge bg-info">Causal Inference</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Tools & Platforms</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-warning">Git</span>
+                                            <span class="badge bg-warning">Docker</span>
+                                            <span class="badge bg-warning">Tableau</span>
+                                            <span class="badge bg-warning">Hadoop</span>
+                                            <span class="badge bg-warning">Spark</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Projects -->
+                    <div class="mb-5">
+                        <h4 class="mb-4">Featured Projects</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">KeyQuest Game</h5>
+                                        <p class="card-text">
+                                            A 2D tile-based world exploration game built in Java with customizable tiles 
+                                            and avatars. Features random room generation algorithm and near-sight 
+                                            functionality for immersive gameplay.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-secondary">Java</span>
+                                            <span class="badge bg-secondary">Game Development</span>
+                                            <span class="badge bg-secondary">Algorithms</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">WordNet & NGram Viewer</h5>
+                                        <p class="card-text">
+                                            Developed a unique graph class in Java managing 80,000+ words and 400,000+ 
+                                            relationships. Created an NGram Viewer displaying word occurrences in large 
+                                            text corpora with interactive visualization.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-secondary">Java</span>
+                                            <span class="badge bg-secondary">Data Structures</span>
+                                            <span class="badge bg-secondary">Web Development</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -230,8 +412,8 @@
                                     <i class="fas fa-envelope text-primary mb-3 fs-1"></i>
                                     <h5 class="card-title">Email</h5>
                                     <p class="card-text">
-                                        <a href="mailto:john.matthew@example.com" class="text-decoration-none">
-                                            john.matthew@example.com
+                                        <a href="mailto:jm.garcia@berkeley.edu" class="text-decoration-none">
+                                            jm.garcia@berkeley.edu
                                         </a>
                                     </p>
                                 </div>
@@ -240,11 +422,11 @@
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-globe text-primary mb-3 fs-1"></i>
-                                    <h5 class="card-title">Website</h5>
+                                    <i class="fas fa-phone text-primary mb-3 fs-1"></i>
+                                    <h5 class="card-title">Phone</h5>
                                     <p class="card-text">
-                                        <a href="https://johnmatthew.com" class="text-decoration-none" target="_blank">
-                                            www.johnmatthew.com
+                                        <a href="tel:+14158024846" class="text-decoration-none">
+                                            (415) 802-4846
                                         </a>
                                     </p>
                                 </div>
@@ -256,14 +438,11 @@
                     <div class="text-center mt-5">
                         <h5 class="mb-4">Connect With Me</h5>
                         <div class="d-flex justify-content-center gap-3">
-                            <a href="https://linkedin.com/in/johnmatthew" class="btn btn-outline-primary" target="_blank">
+                            <a href="https://linkedin.com/in/jmg-ml" class="btn btn-outline-primary" target="_blank">
                                 <i class="fab fa-linkedin-in me-2"></i>LinkedIn
                             </a>
-                            <a href="https://github.com/johnmatthew" class="btn btn-outline-primary" target="_blank">
+                            <a href="https://github.com/johnmgarcia" class="btn btn-outline-primary" target="_blank">
                                 <i class="fab fa-github me-2"></i>GitHub
-                            </a>
-                            <a href="https://twitter.com/johnmatthew" class="btn btn-outline-primary" target="_blank">
-                                <i class="fab fa-twitter me-2"></i>Twitter
                             </a>
                         </div>
                     </div>
@@ -277,7 +456,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-0 text-muted">&copy; 2025 Johnmatthew. All rights reserved.</p>
+                    <p class="mb-0 text-muted">&copy; 2025 JohnMatthew Garcia. All rights reserved.</p>
                 </div>
             </div>
         </div>
