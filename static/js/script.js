@@ -1,6 +1,42 @@
 // JavaScript for Johnmatthew's Resume Website
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-bs-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    // Theme toggle event listener
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = html.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        
+        // Add a subtle animation effect
+        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 300);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-moon';
+            themeToggle.setAttribute('aria-label', 'Switch to light theme');
+        } else {
+            themeIcon.className = 'fas fa-sun';
+            themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+        }
+    }
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
