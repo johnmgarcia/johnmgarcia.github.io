@@ -97,6 +97,36 @@ html {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* About Me section - better readability */
+#about .card.bg-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#about .card.bg-secondary .card-body {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+#about .card.bg-secondary .lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+/* Light theme adjustments for About Me */
+[data-bs-theme="light"] #about .card.bg-secondary {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] #about .card.bg-secondary .card-body {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+[data-bs-theme="light"] #about .card.bg-secondary .lead {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 /* Buttons */
 .btn {
     transition: all 0.3s ease;
@@ -130,15 +160,39 @@ html {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Make Linktree button stand out more */
-.btn-primary.social-btn {
-    background: linear-gradient(45deg, #00D2FF, #3A7BD5);
+/* LinkedIn button - LinkedIn blue */
+.btn-outline-primary.social-btn[href*="linkedin"] {
+    border-color: #0077B5;
+    color: #0077B5;
+}
+
+.btn-outline-primary.social-btn[href*="linkedin"]:hover {
+    background-color: #0077B5;
+    border-color: #0077B5;
+    color: white;
+}
+
+/* GitHub button - GitHub purple */
+.btn-outline-primary.social-btn[href*="github"] {
+    border-color: #6f42c1;
+    color: #6f42c1;
+}
+
+.btn-outline-primary.social-btn[href*="github"]:hover {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
+
+/* Linktree button - Linktree green */
+.btn-primary.social-btn[href*="linktr.ee"] {
+    background: linear-gradient(45deg, #00E676, #00C853);
     border: none;
     color: white;
 }
 
-.btn-primary.social-btn:hover {
-    background: linear-gradient(45deg, #3A7BD5, #00D2FF);
+.btn-primary.social-btn[href*="linktr.ee"]:hover {
+    background: linear-gradient(45deg, #00C853, #00E676);
     transform: translateY(-3px) scale(1.05);
 }
 
