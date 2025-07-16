@@ -264,27 +264,59 @@ document.addEventListener('DOMContentLoaded', function() {
     meetingDate.min = today;
     
     // Handle coffee chat form submission
-    coffeeChatForm.addEventListener('submit', function(e) {
+    coffeeChatForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const selectedTimeSlot = document.querySelector('.time-slot.selected');
-        const selectedTime = selectedTimeSlot ? selectedTimeSlot.textContent : 'No time selected';
+        if (!selectedTimeSlot) {
+            alert('Please select a time slot.');
+            return;
+        }
+        const selectedTime = selectedTimeSlot.textContent;
+        const [startTime, endTime] = selectedTime.split(' - ').map(t => t.trim());
         
         const formData = {
             date: meetingDate.value,
-            time: selectedTime,
+            start_time: convertTo24Hour(startTime),
+            end_time: convertTo24Hour(endTime),
             topic: document.getElementById('meetingTopic').value,
             email: document.getElementById('meetingEmail').value
         };
         
-        // Here you would typically send this to a backend service
-        // For now, we'll simulate a successful booking
-        alert(`Coffee chat scheduled for ${formData.date} at ${formData.time}!\n\nJohnMatthew will receive a notification and get back to you soon at ${formData.email}.`);
+        try {
+            const response = await fetch('/schedule', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            if (response.ok) {
+                alert(`Coffee chat scheduled!\n\nA calendar invite has been created. View event: ${result.event_link}`);
+            } else {
+                alert('There was an error scheduling your coffee chat. Please try again.');
+            }
+        } catch (error) {
+            alert('There was an error connecting to the server. Please try again.');
+        }
         
         // Reset form and close modal
         coffeeChatForm.reset();
         coffeeChatModal.hide();
     });
+
+    // Helper to convert 12-hour time to 24-hour format (for Google Calendar)
+    function convertTo24Hour(timeStr) {
+        // Example: '9:00 AM' or '1:00 PM'
+        const [time, modifier] = timeStr.split(' ');
+        let [hours, minutes] = time.split(':');
+        if (modifier === 'PM' && hours !== '12') {
+            hours = String(parseInt(hours, 10) + 12);
+        }
+        if (modifier === 'AM' && hours === '12') {
+            hours = '00';
+        }
+        return `${hours.padStart(2, '0')}:${minutes}`;
+    }
     
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
