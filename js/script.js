@@ -226,7 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const coffeeChatModal = new bootstrap.Modal(document.getElementById('coffeeChatModal'));
     const coffeeChatForm = document.getElementById('coffeeChatForm');
     const meetingDate = document.getElementById('meetingDate');
-    const meetingTime = document.getElementById('meetingTime');
     const timeSlots = document.getElementById('timeSlots');
     
     // Coffee chat button click
@@ -255,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
             slotDiv.addEventListener('click', function() {
                 document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
                 this.classList.add('selected');
-                meetingTime.value = slot;
             });
             timeSlots.appendChild(slotDiv);
         });
@@ -269,9 +267,12 @@ document.addEventListener('DOMContentLoaded', function() {
     coffeeChatForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const selectedTimeSlot = document.querySelector('.time-slot.selected');
+        const selectedTime = selectedTimeSlot ? selectedTimeSlot.textContent : 'No time selected';
+        
         const formData = {
             date: meetingDate.value,
-            time: meetingTime.value,
+            time: selectedTime,
             topic: document.getElementById('meetingTopic').value,
             email: document.getElementById('meetingEmail').value
         };
