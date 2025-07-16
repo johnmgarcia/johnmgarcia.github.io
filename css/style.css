@@ -845,12 +845,12 @@ section {
 }
 
 .school-logo {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background: #001a57; /* fallback for Berkeley blue */
+    border-radius: 0;
+    border: none;
+    background: none;
     vertical-align: middle;
     margin-right: 0.5em;
 }
