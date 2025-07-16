@@ -52,7 +52,7 @@
     text-align: center;
     margin-bottom: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 0.5em;
 }
@@ -855,6 +855,7 @@ section {
     border-radius: 0;
     border: none;
     background: none;
-    vertical-align: middle;
+    vertical-align: top;
+    margin-top: 0.2em;
     margin-right: 0.5em;
 }
