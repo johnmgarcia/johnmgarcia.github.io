@@ -196,13 +196,15 @@ a[href*="github"].btn-outline-primary.social-btn:hover {
 
 /* Linktree button - Linktree green */
 a[href*="linktr.ee"].btn-primary.social-btn {
-    background: linear-gradient(45deg, #00E676, #00C853) !important;
-    border: none !important;
-    color: white !important;
+    background: transparent !important;
+    border: 2px solid #00E676 !important;
+    color: #00E676 !important;
 }
 
 a[href*="linktr.ee"].btn-primary.social-btn:hover {
-    background: linear-gradient(45deg, #00C853, #00E676) !important;
+    background: linear-gradient(45deg, #00E676, #00C853) !important;
+    border-color: #00E676 !important;
+    color: white !important;
     transform: translateY(-3px) scale(1.05);
 }
 
