@@ -60,9 +60,64 @@
 
 .profile-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-content: center;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Profile button specific styles */
+.profile-buttons .btn {
+    min-width: 100px;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* LinkedIn button in profile */
+.profile-buttons .btn-primary {
+    background-color: #0077B5;
+    border-color: #0077B5;
+}
+
+.profile-buttons .btn-primary:hover {
+    background-color: #005885;
+    border-color: #005885;
+}
+
+/* GitHub button in profile */
+.profile-buttons .btn-outline-primary[href*="github"] {
+    border-color: #6f42c1;
+    color: #6f42c1;
+}
+
+.profile-buttons .btn-outline-primary[href*="github"]:hover {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
+
+/* Linktree button in profile */
+.profile-buttons .btn-outline-primary[href*="linktr.ee"] {
+    border-color: #00E676;
+    color: #00E676;
+}
+
+.profile-buttons .btn-outline-primary[href*="linktr.ee"]:hover {
+    background-color: #00E676;
+    border-color: #00E676;
+    color: white;
+}
+
+/* Resume PDF button */
+.profile-buttons .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.profile-buttons .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
 }
 
 /* AI Assistant Section */
@@ -456,6 +511,16 @@ a[href*="linktr.ee"].btn-primary.social-btn:hover {
     
     .ai-title {
         font-size: 1.5rem;
+    }
+    
+    .profile-buttons {
+        gap: 0.25rem;
+    }
+    
+    .profile-buttons .btn {
+        min-width: 80px;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
     }
     
     .topic-buttons {

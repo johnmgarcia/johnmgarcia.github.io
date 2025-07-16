@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
-            return "JohnMatthew's experience includes Network Engineer at UC Berkeley, Undergraduate Technician at D-Lab, and incoming MS CS student at Georgia Tech. You can find more details in the Professional Journey section below.";
+            return "You can download JohnMatthew's full resume as a PDF by clicking the 'Resume PDF' button in his profile section. It contains detailed information about his experience as a Network Engineer at UC Berkeley, Undergraduate Technician at D-Lab, and his upcoming MS in Computer Science at Georgia Tech.";
         }
         
         return "That's an interesting question! While I'm trained on JohnMatthew's experience, I might not have specific information about that. Try asking about his work experience, projects, skills, education, or network engineering background. You can also click the topic buttons above for example questions!";
