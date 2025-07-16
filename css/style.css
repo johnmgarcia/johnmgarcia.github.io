@@ -74,50 +74,51 @@
 }
 
 /* LinkedIn button in profile */
-.profile-buttons .btn-primary {
-    background-color: #0077B5;
-    border-color: #0077B5;
+.profile-buttons .linkedin-btn {
+    border-color: #0077B5 !important;
+    color: #0077B5 !important;
 }
 
-.profile-buttons .btn-primary:hover {
-    background-color: #005885;
-    border-color: #005885;
+.profile-buttons .linkedin-btn:hover {
+    background-color: #0077B5 !important;
+    border-color: #0077B5 !important;
+    color: white !important;
 }
 
 /* GitHub button in profile */
-.profile-buttons .btn-outline-primary[href*="github"] {
-    border-color: #6f42c1;
-    color: #6f42c1;
+.profile-buttons .github-btn {
+    border-color: #6f42c1 !important;
+    color: #6f42c1 !important;
 }
 
-.profile-buttons .btn-outline-primary[href*="github"]:hover {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
-    color: white;
+.profile-buttons .github-btn:hover {
+    background-color: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+    color: white !important;
 }
 
 /* Linktree button in profile */
-.profile-buttons .btn-outline-primary[href*="linktr.ee"] {
-    border-color: #00E676;
-    color: #00E676;
+.profile-buttons .linktree-btn {
+    border-color: #00E676 !important;
+    color: #00E676 !important;
 }
 
-.profile-buttons .btn-outline-primary[href*="linktr.ee"]:hover {
-    background-color: #00E676;
-    border-color: #00E676;
-    color: white;
+.profile-buttons .linktree-btn:hover {
+    background-color: #00E676 !important;
+    border-color: #00E676 !important;
+    color: white !important;
 }
 
-/* Resume PDF button */
-.profile-buttons .btn-outline-secondary {
-    border-color: #6c757d;
-    color: #6c757d;
+/* Resume PDF button - Red outline */
+.profile-buttons .btn-outline-danger {
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
 }
 
-.profile-buttons .btn-outline-secondary:hover {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    color: white;
+.profile-buttons .btn-outline-danger:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
 }
 
 /* AI Assistant Section */

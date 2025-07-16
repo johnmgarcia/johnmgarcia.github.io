@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "What are his academic achievements?"
             ],
             responses: {
-                "schools": "JohnMatthew completed his Data Science BA at UC Berkeley in 2024, and is currently an incoming MS student in Computer Science at Georgia Tech (2026). He also has an Economics AA from Fresno City College.",
+                "schools": "JohnMatthew completed his Data Science BA at UC Berkeley in 2025, and is currently an incoming MS student in Computer Science at Georgia Tech (2026). He also has an Economics AA from Fresno City College.",
                 "georgia tech": "JohnMatthew is pursuing a Master's degree in Computer Science at Georgia Tech, starting in 2026. This represents his continued commitment to advancing his technical skills and knowledge.",
                 "undergraduate": "JohnMatthew earned a Bachelor's degree in Data Science from UC Berkeley, where he developed strong analytical and technical skills. His degree focused on statistics, programming, and data-driven decision making.",
                 "achievements": "Academic achievements include: UC Berkeley Data Science BA, Incoming Georgia Tech MS CS, Strong foundation in statistics and programming, and ongoing commitment to continuous learning."
