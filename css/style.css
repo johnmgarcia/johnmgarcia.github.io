@@ -51,6 +51,10 @@
     color: var(--bs-light);
     text-align: center;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
 }
 
 .highlight {
