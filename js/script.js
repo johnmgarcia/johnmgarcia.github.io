@@ -230,8 +230,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Coffee chat button click
     coffeeChatBtn.addEventListener('click', function() {
-        coffeeChatModal.show();
-        populateTimeSlots();
+        window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1e6nCzwDW3RyNAj8F4M4xFZtwsfVkJicDc2tR4yjun_6qV45g5XAPV-ky6NbN8jeAg93p1oIFb', '_blank');
+        // coffeeChatModal.show();
+        // populateTimeSlots();
     });
     
     // Populate time slots
