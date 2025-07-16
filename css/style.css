@@ -843,3 +843,14 @@ section {
     color: #856404;
     border: 1px solid rgba(255, 193, 7, 0.3);
 }
+
+.school-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #001a57; /* fallback for Berkeley blue */
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
