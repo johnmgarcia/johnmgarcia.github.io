@@ -1,4 +1,4 @@
-// JavaScript for Johnmatthew's Resume Website
+// JavaScript for JohnMatthew's AI-Powered Resume Website
 
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
@@ -36,6 +36,254 @@ document.addEventListener('DOMContentLoaded', function() {
             themeToggle.setAttribute('aria-label', 'Switch to dark theme');
         }
     }
+    
+    // AI Chatbot functionality
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const chatMessages = document.getElementById('chatMessages');
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    
+    // AI Knowledge Base
+    const aiKnowledge = {
+        experience: {
+            title: "Work Experience",
+            questions: [
+                "What does JohnMatthew do as a Network Engineer?",
+                "Tell me about his role at UC Berkeley D-Lab",
+                "What are his main responsibilities?",
+                "What technologies does he work with?"
+            ],
+            responses: {
+                "network engineer": "JohnMatthew works as a Network Engineer at UC Berkeley, where he performs hands-on network support across campus. His responsibilities include replacing switches, restoring WiFi, configuring ports and IP addresses, and troubleshooting connectivity issues. He also utilizes Python/Bash scripts and conducts preventive maintenance on equipment.",
+                "d-lab": "At UC Berkeley's D-Lab, JohnMatthew serves as an Undergraduate Technician providing cross-disciplinary services. He delivers in-depth consulting, advising, and access to staff support for software or infrastructure needs. He assists graduate students, faculty, and staff in advancing world-class research in data-intensive social sciences and humanities.",
+                "responsibilities": "JohnMatthew's main responsibilities include: 1) Network administration and troubleshooting, 2) Python/Bash scripting for automation, 3) Technical support and consulting, 4) Research support for data-intensive projects, 5) Equipment maintenance and configuration.",
+                "technologies": "JohnMatthew works with various technologies including: Python, Bash scripting, network administration tools, WiFi systems, switch configuration, IP addressing, and data science tools for research support."
+            }
+        },
+        projects: {
+            title: "Projects",
+            questions: [
+                "Tell me about the KeyQuest Game project",
+                "What is the WordNet & NGram Viewer?",
+                "What technologies were used?",
+                "What are the key features?"
+            ],
+            responses: {
+                "keyquest": "KeyQuest is a 2D tile-based world exploration game built in Java. It features customizable tiles and avatars, random room generation algorithms, and near-sight functionality for immersive gameplay. The project demonstrates strong algorithmic thinking and game development skills.",
+                "wordnet": "The WordNet & NGram Viewer is a sophisticated data structure project where JohnMatthew developed a unique graph class in Java managing 80,000+ words and 400,000+ relationships. He created an NGram Viewer that displays word occurrences in large text corpora with interactive visualization.",
+                "technologies": "JohnMatthew's projects use: Java for core development, Data Structures and Algorithms, Graph Theory, Web Development for visualization, and Game Development principles.",
+                "features": "Key features include: Random room generation algorithms, Interactive data visualization, Graph-based word relationships, Customizable game elements, and Near-sight gameplay mechanics."
+            }
+        },
+        skills: {
+            title: "Skills",
+            questions: [
+                "What programming languages does he know?",
+                "What are his data science skills?",
+                "What tools and platforms does he use?",
+                "What are his technical strengths?"
+            ],
+            responses: {
+                "programming": "JohnMatthew is proficient in Python, SQL, and Java. He uses Python extensively for data science and automation, SQL for database management, and Java for software development projects.",
+                "data science": "His data science skills include: Data Wrangling, Exploratory Data Analysis (EDA), A/B Testing, Causal Inference, Machine Learning with Pandas, Scikit-learn, TensorFlow, and PyTorch.",
+                "tools": "JohnMatthew works with: Git for version control, Docker for containerization, Tableau for data visualization, Hadoop and Spark for big data processing, and various network administration tools.",
+                "strengths": "His technical strengths include: Network Engineering, Data Science, Statistical Analysis, Research Support, Technical Consulting, and Cross-disciplinary Problem Solving."
+            }
+        },
+        education: {
+            title: "Education",
+            questions: [
+                "Where did he go to school?",
+                "What is he studying at Georgia Tech?",
+                "What was his undergraduate degree?",
+                "What are his academic achievements?"
+            ],
+            responses: {
+                "schools": "JohnMatthew completed his Data Science BA at UC Berkeley in 2024, and is currently an incoming MS student in Computer Science at Georgia Tech (2026). He also has an Economics AA from Fresno City College.",
+                "georgia tech": "JohnMatthew is pursuing a Master's degree in Computer Science at Georgia Tech, starting in 2026. This represents his continued commitment to advancing his technical skills and knowledge.",
+                "undergraduate": "JohnMatthew earned a Bachelor's degree in Data Science from UC Berkeley, where he developed strong analytical and technical skills. His degree focused on statistics, programming, and data-driven decision making.",
+                "achievements": "Academic achievements include: UC Berkeley Data Science BA, Incoming Georgia Tech MS CS, Strong foundation in statistics and programming, and ongoing commitment to continuous learning."
+            }
+        },
+        network: {
+            title: "Network Engineering",
+            questions: [
+                "What does network engineering involve?",
+                "What specific network tasks does he perform?",
+                "How does he use automation?",
+                "What are his network skills?"
+            ],
+            responses: {
+                "network engineering": "Network engineering involves designing, implementing, and maintaining network infrastructure. JohnMatthew specializes in campus network support, including WiFi systems, switch configuration, and network troubleshooting.",
+                "tasks": "His specific tasks include: Replacing network switches, Restoring WiFi connectivity, Configuring ports and IP addresses, Troubleshooting connectivity issues, Conducting preventive maintenance, and Collaborating with IT teams.",
+                "automation": "JohnMatthew uses Python and Bash scripting to automate network tasks, including: Configuration management, Monitoring and alerting, Maintenance scheduling, and Performance optimization.",
+                "skills": "His network engineering skills include: Network administration, WiFi systems, Switch configuration, IP addressing, Network troubleshooting, Python/Bash automation, and Technical documentation."
+            }
+        }
+    };
+    
+    // Handle topic button clicks
+    topicButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            const topicData = aiKnowledge[topic];
+            
+            if (topicData) {
+                // Remove active class from all buttons
+                topicButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show example questions
+                const questions = topicData.questions.join('\n• ');
+                addMessage('ai', `Here are some example questions about ${topicData.title}:\n\n• ${questions}\n\nFeel free to ask any of these or ask something else!`);
+            }
+        });
+    });
+    
+    // Handle chat input
+    function handleChatInput() {
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            chatInput.value = '';
+            
+            // Process the message and generate response
+            setTimeout(() => {
+                const response = generateAIResponse(message);
+                addMessage('ai', response);
+            }, 500);
+        }
+    }
+    
+    // Send button click
+    sendBtn.addEventListener('click', handleChatInput);
+    
+    // Enter key press
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            handleChatInput();
+        }
+    });
+    
+    // Add message to chat
+    function addMessage(type, content) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}-message`;
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        
+        if (type === 'ai') {
+            avatar.innerHTML = '<i class="fas fa-robot"></i>';
+        } else {
+            avatar.innerHTML = '<i class="fas fa-user"></i>';
+        }
+        
+        contentDiv.textContent = content;
+        
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(contentDiv);
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Generate AI response
+    function generateAIResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Check each topic for relevant responses
+        for (const [topic, data] of Object.entries(aiKnowledge)) {
+            for (const [keyword, response] of Object.entries(data.responses)) {
+                if (lowerMessage.includes(keyword)) {
+                    return response;
+                }
+            }
+        }
+        
+        // Default responses for common questions
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+            return "Hello! I'm JohnMatthew's AI assistant. I can help you learn about his experience, projects, skills, and education. What would you like to know?";
+        }
+        
+        if (lowerMessage.includes('contact') || lowerMessage.includes('email')) {
+            return "You can reach JohnMatthew at jm.garcia@berkeley.edu. He's also available for coffee chats - just click the 'Coffee Chat' button in the navigation!";
+        }
+        
+        if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
+            return "JohnMatthew's experience includes Network Engineer at UC Berkeley, Undergraduate Technician at D-Lab, and incoming MS CS student at Georgia Tech. You can find more details in the Professional Journey section below.";
+        }
+        
+        return "That's an interesting question! While I'm trained on JohnMatthew's experience, I might not have specific information about that. Try asking about his work experience, projects, skills, education, or network engineering background. You can also click the topic buttons above for example questions!";
+    }
+    
+    // Coffee Chat functionality
+    const coffeeChatBtn = document.getElementById('coffeeChatBtn');
+    const coffeeChatModal = new bootstrap.Modal(document.getElementById('coffeeChatModal'));
+    const coffeeChatForm = document.getElementById('coffeeChatForm');
+    const meetingDate = document.getElementById('meetingDate');
+    const meetingTime = document.getElementById('meetingTime');
+    const timeSlots = document.getElementById('timeSlots');
+    
+    // Coffee chat button click
+    coffeeChatBtn.addEventListener('click', function() {
+        coffeeChatModal.show();
+        populateTimeSlots();
+    });
+    
+    // Populate time slots
+    function populateTimeSlots() {
+        const slots = [
+            '9:00 AM - 10:00 AM',
+            '10:00 AM - 11:00 AM',
+            '11:00 AM - 12:00 PM',
+            '1:00 PM - 2:00 PM',
+            '2:00 PM - 3:00 PM',
+            '3:00 PM - 4:00 PM',
+            '4:00 PM - 5:00 PM'
+        ];
+        
+        timeSlots.innerHTML = '';
+        slots.forEach(slot => {
+            const slotDiv = document.createElement('div');
+            slotDiv.className = 'time-slot';
+            slotDiv.textContent = slot;
+            slotDiv.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                meetingTime.value = slot;
+            });
+            timeSlots.appendChild(slotDiv);
+        });
+    }
+    
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    meetingDate.min = today;
+    
+    // Handle coffee chat form submission
+    coffeeChatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            date: meetingDate.value,
+            time: meetingTime.value,
+            topic: document.getElementById('meetingTopic').value,
+            email: document.getElementById('meetingEmail').value
+        };
+        
+        // Here you would typically send this to a backend service
+        // For now, we'll simulate a successful booking
+        alert(`Coffee chat scheduled for ${formData.date} at ${formData.time}!\n\nJohnMatthew will receive a notification and get back to you soon at ${formData.email}.`);
+        
+        // Reset form and close modal
+        coffeeChatForm.reset();
+        coffeeChatModal.hide();
+    });
     
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -102,25 +350,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateNavbarBackground);
     
-    // Animated counter for statistics (if needed in future)
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        
-        function updateCounter() {
-            start += increment;
-            element.textContent = Math.floor(start);
-            
-            if (start < target) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent = target;
-            }
-        }
-        
-        updateCounter();
-    }
-    
     // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1,
@@ -141,46 +370,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         observer.observe(el);
-    });
-    
-    // Form validation and submission (for future contact form)
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            if (!name || !email || !message) {
-                alert('Please fill in all fields.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Here you would typically send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-    
-    // Keyboard navigation support
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-            document.body.classList.add('keyboard-navigation');
-        }
-    });
-    
-    document.addEventListener('mousedown', function() {
-        document.body.classList.remove('keyboard-navigation');
     });
     
     // Performance optimization: Debounce scroll events
@@ -206,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavLink();
     updateNavbarBackground();
     
-    console.log('Johnmatthew Resume Website loaded successfully!');
+    console.log('JohnMatthew AI-Powered Resume Website loaded successfully!');
 });
 
 // Utility functions
