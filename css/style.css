@@ -799,6 +799,13 @@ section {
     }
 }
 
+@media (max-width: 600px) {
+  #navbarNav.show ~ #themeToggle,
+  #themeToggle:has(+ #navbarNav.show) {
+    display: none !important;
+  }
+}
+
 /* Light theme styles */
 [data-bs-theme="light"] {
     --bs-body-bg: #ffffff;
