@@ -119,6 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 "automation": "JohnMatthew uses Python and Bash scripting to automate network tasks, including: Configuration management, Monitoring and alerting, Maintenance scheduling, and Performance optimization.",
                 "skills": "His network engineering skills include: Network administration, WiFi systems, Switch configuration, IP addressing, Network troubleshooting, Python/Bash automation, and Technical documentation."
             }
+        },
+        personal_statement: {
+            title: "Grad School & Motivation",
+            questions: [
+                "Why are you pursuing graduate study?",
+                "What are your goals in the GT OMSCS program?",
+                "What is your background in data science and engineering?",
+                "What motivates you in AI and machine learning?",
+                "What are your long-term career aspirations?"
+            ],
+            responses: {
+                "graduate study": "JohnMatthew is pursuing graduate study through the UT Austin OMSCS program to deepen his understanding of artificial intelligence and machine learning, gain hands-on experience through advanced coursework and projects, and ultimately become a machine learning engineer who can contribute to meaningful real-world solutions.",
+                "ut austin": "UT Austin's OMSCS program stands out to JohnMatthew for its academic rigor, affordability, and flexible online structure. As an Austin native, UT has always been his dream school.",
+                "background": "JohnMatthew holds a B.A. in Data Science from UC Berkeley, with an emphasis in business analytics and core computer science topics. He has strong exposure to applied statistics, data engineering, and machine learning, and has worked in technical roles applying these skills in real-world settings.",
+                "motivation": "He is motivated by a desire to fully understand how AI models are developed, deployed, and scaled, and to work on impactful, real-world problems. He values ethical and responsible AI development and wants to contribute to communities that share these values.",
+                "career": "JohnMatthew's ultimate goal is to become a machine learning engineer and AI enthusiast, working on models to solve impactful, real-world problems in domains such as infrastructure, education, or the public sector."
+            }
         }
     };
     
