@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "What are your long-term career aspirations?"
             ],
             responses: {
-                "graduate study": "JohnMatthew is pursuing graduate study through the UT Austin OMSCS program to deepen his understanding of artificial intelligence and machine learning, gain hands-on experience through advanced coursework and projects, and ultimately become a machine learning engineer who can contribute to meaningful real-world solutions.",
+                "graduate study": "JohnMatthew is pursuing graduate study through the Georgia Tech OMSCS program to deepen his understanding of artificial intelligence and machine learning, gain hands-on experience through advanced coursework and projects, and ultimately become a machine learning engineer who can contribute to meaningful real-world solutions.",
                 "ut austin": "UT Austin's OMSCS program stands out to JohnMatthew for its academic rigor, affordability, and flexible online structure. As an Austin native, UT has always been his dream school.",
                 "background": "JohnMatthew holds a B.A. in Data Science from UC Berkeley, with an emphasis in business analytics and core computer science topics. He has strong exposure to applied statistics, data engineering, and machine learning, and has worked in technical roles applying these skills in real-world settings.",
                 "motivation": "He is motivated by a desire to fully understand how AI models are developed, deployed, and scaled, and to work on impactful, real-world problems. He values ethical and responsible AI development and wants to contribute to communities that share these values.",
