@@ -684,6 +684,10 @@ function showGameSelection() {
 // Snake Game Functions
 function initSnakeGame() {
     snakeCanvas = document.getElementById('snakeCanvas');
+    if (!snakeCanvas) {
+        console.error('Snake canvas not found!');
+        return;
+    }
     snakeCtx = snakeCanvas.getContext('2d');
     snakeScore = 0;
     snakeHighScore = gameStats.snakeHighScore;
@@ -709,22 +713,35 @@ function initSnakeGame() {
 }
 
 function generateSnakeFood() {
+    if (!snakeCanvas || !snake) {
+        console.error('Snake canvas or snake not initialized!');
+        return {x: 100, y: 100};
+    }
+    
     const gridSize = 10;
     const maxX = Math.floor(snakeCanvas.width / gridSize) - 1;
     const maxY = Math.floor(snakeCanvas.height / gridSize) - 1;
     
     let newFood;
+    let attempts = 0;
     do {
         newFood = {
             x: Math.floor(Math.random() * maxX) * gridSize,
             y: Math.floor(Math.random() * maxY) * gridSize
         };
+        attempts++;
+        if (attempts > 100) break; // Prevent infinite loop
     } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
     
     return newFood;
 }
 
 function drawSnake() {
+    if (!snakeCtx || !snakeCanvas || !snake || !snakeFood) {
+        console.error('Snake game not properly initialized!');
+        return;
+    }
+    
     // Clear canvas
     snakeCtx.fillStyle = '#000';
     snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
@@ -811,12 +828,16 @@ function snakeGameUpdate() {
 
 // Snake game control functions
 function startSnakeGame() {
+    console.log('Starting snake game...');
     if (!snakeRunning) {
         snakeRunning = true;
         snakePaused = false;
         snakeDirection = 'right';
         snakeNextDirection = 'right';
         snakeLoop = setInterval(snakeGameUpdate, 150);
+        console.log('Snake game started!');
+    } else {
+        console.log('Snake game already running');
     }
 }
 
