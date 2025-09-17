@@ -416,6 +416,260 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('JohnMatthew AI-Powered Resume Website loaded successfully!');
 });
 
+// Mini Games - Tic Tac Toe and Connect 4
+let currentGame = null;
+let ticTacToeBoard = [];
+let connectFourBoard = [];
+let currentPlayer = 'X';
+let currentPlayerCF = 'red';
+let gameStats = {
+    xWins: parseInt(localStorage.getItem('xWins')) || 0,
+    oWins: parseInt(localStorage.getItem('oWins')) || 0,
+    redWins: parseInt(localStorage.getItem('redWins')) || 0,
+    yellowWins: parseInt(localStorage.getItem('yellowWins')) || 0
+};
+
+// Game selection functions
+function openMiniGames() {
+    const modal = new bootstrap.Modal(document.getElementById('miniGamesModal'));
+    modal.show();
+    showGameSelection();
+    updateStats();
+}
+
+function selectGame(gameType) {
+    currentGame = gameType;
+    document.getElementById('gameSelection').style.display = 'none';
+    
+    if (gameType === 'tic-tac-toe') {
+        document.getElementById('tic-tac-toe-game').style.display = 'block';
+        initTicTacToe();
+    } else if (gameType === 'connect-four') {
+        document.getElementById('connect-four-game').style.display = 'block';
+        initConnectFour();
+    }
+}
+
+function backToGameSelection() {
+    document.getElementById('gameSelection').style.display = 'block';
+    document.getElementById('tic-tac-toe-game').style.display = 'none';
+    document.getElementById('connect-four-game').style.display = 'none';
+    currentGame = null;
+}
+
+function updateStats() {
+    document.getElementById('xWins').textContent = gameStats.xWins;
+    document.getElementById('oWins').textContent = gameStats.oWins;
+    document.getElementById('redWins').textContent = gameStats.redWins;
+    document.getElementById('yellowWins').textContent = gameStats.yellowWins;
+}
+
+// Tic Tac Toe Game
+function initTicTacToe() {
+    ticTacToeBoard = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+    document.getElementById('currentPlayer').textContent = currentPlayer;
+    createTicTacToeBoard();
+}
+
+function createTicTacToeBoard() {
+    const board = document.getElementById('ticTacToeBoard');
+    board.innerHTML = '';
+    
+    for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'tic-tac-toe-cell';
+        cell.dataset.index = i;
+        cell.addEventListener('click', () => makeTicTacToeMove(i));
+        board.appendChild(cell);
+    }
+}
+
+function makeTicTacToeMove(index) {
+    if (ticTacToeBoard[index] !== '' || checkTicTacToeWinner()) return;
+    
+    ticTacToeBoard[index] = currentPlayer;
+    const cell = document.querySelector(`[data-index="${index}"]`);
+    cell.textContent = currentPlayer;
+    cell.classList.add(currentPlayer.toLowerCase());
+    
+    if (checkTicTacToeWinner()) {
+        setTimeout(() => {
+            alert(`${currentPlayer} wins!`);
+            if (currentPlayer === 'X') {
+                gameStats.xWins++;
+                localStorage.setItem('xWins', gameStats.xWins);
+            } else {
+                gameStats.oWins++;
+                localStorage.setItem('oWins', gameStats.oWins);
+            }
+            updateStats();
+        }, 100);
+        return;
+    }
+    
+    if (ticTacToeBoard.every(cell => cell !== '')) {
+        setTimeout(() => {
+            alert('It\'s a tie!');
+        }, 100);
+        return;
+    }
+    
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    document.getElementById('currentPlayer').textContent = currentPlayer;
+}
+
+function checkTicTacToeWinner() {
+    const winningCombinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6] // Diagonals
+    ];
+    
+    for (let combination of winningCombinations) {
+        const [a, b, c] = combination;
+        if (ticTacToeBoard[a] && ticTacToeBoard[a] === ticTacToeBoard[b] && ticTacToeBoard[a] === ticTacToeBoard[c]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function resetTicTacToe() {
+    initTicTacToe();
+}
+
+// Connect 4 Game
+function initConnectFour() {
+    connectFourBoard = Array(6).fill().map(() => Array(7).fill(''));
+    currentPlayerCF = 'red';
+    document.getElementById('currentPlayerCF').textContent = currentPlayerCF;
+    createConnectFourBoard();
+}
+
+function createConnectFourBoard() {
+    const board = document.getElementById('connectFourBoard');
+    board.innerHTML = '';
+    
+    for (let row = 0; row < 6; row++) {
+        for (let col = 0; col < 7; col++) {
+            const cell = document.createElement('div');
+            cell.className = 'connect-four-cell';
+            cell.dataset.row = row;
+            cell.dataset.col = col;
+            cell.addEventListener('click', () => makeConnectFourMove(col));
+            board.appendChild(cell);
+        }
+    }
+}
+
+function makeConnectFourMove(col) {
+    if (checkConnectFourWinner()) return;
+    
+    // Find the lowest empty row in the column
+    let row = -1;
+    for (let r = 5; r >= 0; r--) {
+        if (connectFourBoard[r][col] === '') {
+            row = r;
+            break;
+        }
+    }
+    
+    if (row === -1) return; // Column is full
+    
+    connectFourBoard[row][col] = currentPlayerCF;
+    const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+    cell.classList.add(currentPlayerCF);
+    
+    if (checkConnectFourWinner()) {
+        setTimeout(() => {
+            alert(`${currentPlayerCF.charAt(0).toUpperCase() + currentPlayerCF.slice(1)} wins!`);
+            if (currentPlayerCF === 'red') {
+                gameStats.redWins++;
+                localStorage.setItem('redWins', gameStats.redWins);
+            } else {
+                gameStats.yellowWins++;
+                localStorage.setItem('yellowWins', gameStats.yellowWins);
+            }
+            updateStats();
+        }, 100);
+        return;
+    }
+    
+    // Check for tie
+    if (connectFourBoard.every(row => row.every(cell => cell !== ''))) {
+        setTimeout(() => {
+            alert('It\'s a tie!');
+        }, 100);
+        return;
+    }
+    
+    currentPlayerCF = currentPlayerCF === 'red' ? 'yellow' : 'red';
+    document.getElementById('currentPlayerCF').textContent = currentPlayerCF;
+}
+
+function checkConnectFourWinner() {
+    // Check horizontal
+    for (let row = 0; row < 6; row++) {
+        for (let col = 0; col < 4; col++) {
+            if (connectFourBoard[row][col] && 
+                connectFourBoard[row][col] === connectFourBoard[row][col + 1] &&
+                connectFourBoard[row][col] === connectFourBoard[row][col + 2] &&
+                connectFourBoard[row][col] === connectFourBoard[row][col + 3]) {
+                return true;
+            }
+        }
+    }
+    
+    // Check vertical
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 7; col++) {
+            if (connectFourBoard[row][col] && 
+                connectFourBoard[row][col] === connectFourBoard[row + 1][col] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 2][col] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 3][col]) {
+                return true;
+            }
+        }
+    }
+    
+    // Check diagonal (top-left to bottom-right)
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 4; col++) {
+            if (connectFourBoard[row][col] && 
+                connectFourBoard[row][col] === connectFourBoard[row + 1][col + 1] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 2][col + 2] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 3][col + 3]) {
+                return true;
+            }
+        }
+    }
+    
+    // Check diagonal (top-right to bottom-left)
+    for (let row = 0; row < 3; row++) {
+        for (let col = 3; col < 7; col++) {
+            if (connectFourBoard[row][col] && 
+                connectFourBoard[row][col] === connectFourBoard[row + 1][col - 1] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 2][col - 2] &&
+                connectFourBoard[row][col] === connectFourBoard[row + 3][col - 3]) {
+                return true;
+            }
+        }
+    }
+    
+    return false;
+}
+
+function resetConnectFour() {
+    initConnectFour();
+}
+
+function showGameSelection() {
+    document.getElementById('gameSelection').style.display = 'block';
+    document.getElementById('tic-tac-toe-game').style.display = 'none';
+    document.getElementById('connect-four-game').style.display = 'none';
+}
+
 // Utility functions
 const Utils = {
     // Smooth scroll to element

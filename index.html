@@ -270,14 +270,92 @@
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <a href="https://johnmgarcia.github.io/Mini-Game-App/" target="_blank" class="btn btn-primary btn-lg" style="border-radius: 2em; font-weight: 600;">
-                            <i class="fas fa-gamepad me-2"></i>Mini Game
-                        </a>
+                        <button class="btn btn-primary btn-lg" onclick="openMiniGames()" style="border-radius: 2em; font-weight: 600;">
+                            <i class="fas fa-gamepad me-2"></i>Mini Games
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Mini Games Modal -->
+    <div class="modal fade" id="miniGamesModal" tabindex="-1" aria-labelledby="miniGamesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="miniGamesModalLabel">
+                        <i class="fas fa-gamepad me-2"></i>Mini Games
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Game Selection -->
+                    <div id="gameSelection" class="text-center">
+                        <h6 class="mb-4">Choose a game to play:</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-primary btn-lg w-100" onclick="selectGame('tic-tac-toe')">
+                                    <i class="fas fa-times me-2"></i>Tic Tac Toe
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-success btn-lg w-100" onclick="selectGame('connect-four')">
+                                    <i class="fas fa-circle me-2"></i>Connect 4
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tic Tac Toe Game -->
+                    <div id="tic-tac-toe-game" class="game-container" style="display: none;">
+                        <div class="text-center mb-3">
+                            <h6>Tic Tac Toe</h6>
+                            <div class="game-info mb-3">
+                                <span class="badge bg-primary me-2">Current Player: <span id="currentPlayer">X</span></span>
+                                <span class="badge bg-success me-2">X Wins: <span id="xWins">0</span></span>
+                                <span class="badge bg-info">O Wins: <span id="oWins">0</span></span>
+                            </div>
+                        </div>
+                        <div class="game-board" id="ticTacToeBoard">
+                            <!-- Tic Tac Toe board will be generated here -->
+                        </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-warning me-2" onclick="resetTicTacToe()">
+                                <i class="fas fa-redo me-1"></i>Reset Game
+                            </button>
+                            <button class="btn btn-secondary" onclick="backToGameSelection()">
+                                <i class="fas fa-arrow-left me-1"></i>Back to Games
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Connect 4 Game -->
+                    <div id="connect-four-game" class="game-container" style="display: none;">
+                        <div class="text-center mb-3">
+                            <h6>Connect 4</h6>
+                            <div class="game-info mb-3">
+                                <span class="badge bg-primary me-2">Current Player: <span id="currentPlayerCF">Red</span></span>
+                                <span class="badge bg-danger me-2">Red Wins: <span id="redWins">0</span></span>
+                                <span class="badge bg-warning">Yellow Wins: <span id="yellowWins">0</span></span>
+                            </div>
+                        </div>
+                        <div class="game-board" id="connectFourBoard">
+                            <!-- Connect 4 board will be generated here -->
+                        </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-warning me-2" onclick="resetConnectFour()">
+                                <i class="fas fa-redo me-1"></i>Reset Game
+                            </button>
+                            <button class="btn btn-secondary" onclick="backToGameSelection()">
+                                <i class="fas fa-arrow-left me-1"></i>Back to Games
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Coffee Chat Modal -->
     <div class="modal fade" id="coffeeChatModal" tabindex="-1" aria-labelledby="coffeeChatModalLabel" aria-hidden="true">

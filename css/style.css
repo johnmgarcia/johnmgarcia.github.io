@@ -845,3 +845,134 @@ html, body {
     margin-top: 0.2em;
     margin-right: 0.5em;
 }
+
+/* Mini Games Styles */
+.game-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* Tic Tac Toe Styles */
+#ticTacToeBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 5px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tic-tac-toe-cell {
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.tic-tac-toe-cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.tic-tac-toe-cell.x {
+    color: #007bff;
+}
+
+.tic-tac-toe-cell.o {
+    color: #28a745;
+}
+
+/* Connect 4 Styles */
+#connectFourBoard {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 3px;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #0056b3;
+}
+
+.connect-four-cell {
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connect-four-cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.connect-four-cell.red {
+    background-color: #dc3545;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.connect-four-cell.yellow {
+    background-color: #ffc107;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.connect-four-cell.red::after,
+.connect-four-cell.yellow::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: inherit;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.game-info {
+    margin-bottom: 1rem;
+}
+
+.game-info .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Mobile Responsiveness for Games */
+@media (max-width: 768px) {
+    #ticTacToeBoard {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+    
+    .tic-tac-toe-cell {
+        font-size: 1.5rem;
+    }
+    
+    #connectFourBoard {
+        grid-template-columns: repeat(7, 35px);
+        grid-template-rows: repeat(6, 35px);
+    }
+    
+    .connect-four-cell.red::after,
+    .connect-four-cell.yellow::after {
+        width: 20px;
+        height: 20px;
+    }
+}
