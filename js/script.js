@@ -416,17 +416,22 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('JohnMatthew AI-Powered Resume Website loaded successfully!');
 });
 
-// Mini Games - Tic Tac Toe and Connect 4
+// Mini Games - Tic Tac Toe, Connect 4, and Snake
 let currentGame = null;
 let ticTacToeBoard = [];
 let connectFourBoard = [];
 let currentPlayer = 'X';
 let currentPlayerCF = 'red';
+
+// Snake game variables
+let snakeCanvas, snakeCtx, snake, snakeFood, snakeRunning, snakePaused, snakeScore, snakeHighScore, snakeLoop, snakeDirection, snakeNextDirection;
+
 let gameStats = {
     xWins: parseInt(localStorage.getItem('xWins')) || 0,
     oWins: parseInt(localStorage.getItem('oWins')) || 0,
     redWins: parseInt(localStorage.getItem('redWins')) || 0,
-    yellowWins: parseInt(localStorage.getItem('yellowWins')) || 0
+    yellowWins: parseInt(localStorage.getItem('yellowWins')) || 0,
+    snakeHighScore: parseInt(localStorage.getItem('snakeHighScore')) || 0
 };
 
 // Game selection functions
@@ -447,6 +452,9 @@ function selectGame(gameType) {
     } else if (gameType === 'connect-four') {
         document.getElementById('connect-four-game').style.display = 'block';
         initConnectFour();
+    } else if (gameType === 'snake') {
+        document.getElementById('snake-game').style.display = 'block';
+        initSnakeGame();
     }
 }
 
@@ -454,6 +462,7 @@ function backToGameSelection() {
     document.getElementById('gameSelection').style.display = 'block';
     document.getElementById('tic-tac-toe-game').style.display = 'none';
     document.getElementById('connect-four-game').style.display = 'none';
+    document.getElementById('snake-game').style.display = 'none';
     currentGame = null;
 }
 
@@ -462,6 +471,7 @@ function updateStats() {
     document.getElementById('oWins').textContent = gameStats.oWins;
     document.getElementById('redWins').textContent = gameStats.redWins;
     document.getElementById('yellowWins').textContent = gameStats.yellowWins;
+    document.getElementById('snakeHighScore').textContent = gameStats.snakeHighScore;
 }
 
 // Tic Tac Toe Game
@@ -668,7 +678,195 @@ function showGameSelection() {
     document.getElementById('gameSelection').style.display = 'block';
     document.getElementById('tic-tac-toe-game').style.display = 'none';
     document.getElementById('connect-four-game').style.display = 'none';
+    document.getElementById('snake-game').style.display = 'none';
 }
+
+// Snake Game Functions
+function initSnakeGame() {
+    snakeCanvas = document.getElementById('snakeCanvas');
+    snakeCtx = snakeCanvas.getContext('2d');
+    snakeScore = 0;
+    snakeHighScore = gameStats.snakeHighScore;
+    document.getElementById('snakeScore').textContent = snakeScore;
+    document.getElementById('snakeHighScore').textContent = snakeHighScore;
+    
+    // Initialize snake
+    snake = [
+        {x: 200, y: 200},
+        {x: 190, y: 200},
+        {x: 180, y: 200}
+    ];
+    
+    // Initialize food
+    snakeFood = generateSnakeFood();
+    
+    snakeRunning = false;
+    snakePaused = false;
+    snakeDirection = 'right';
+    snakeNextDirection = 'right';
+    
+    drawSnake();
+}
+
+function generateSnakeFood() {
+    const gridSize = 10;
+    const maxX = Math.floor(snakeCanvas.width / gridSize) - 1;
+    const maxY = Math.floor(snakeCanvas.height / gridSize) - 1;
+    
+    let newFood;
+    do {
+        newFood = {
+            x: Math.floor(Math.random() * maxX) * gridSize,
+            y: Math.floor(Math.random() * maxY) * gridSize
+        };
+    } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+    
+    return newFood;
+}
+
+function drawSnake() {
+    // Clear canvas
+    snakeCtx.fillStyle = '#000';
+    snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+    
+    // Draw snake
+    snake.forEach((segment, index) => {
+        if (index === 0) {
+            // Head
+            snakeCtx.fillStyle = '#0a0';
+        } else {
+            snakeCtx.fillStyle = '#0f0';
+        }
+        snakeCtx.fillRect(segment.x, segment.y, 10, 10);
+    });
+    
+    // Draw food
+    snakeCtx.fillStyle = '#f00';
+    snakeCtx.fillRect(snakeFood.x, snakeFood.y, 10, 10);
+}
+
+function moveSnake() {
+    const head = {x: snake[0].x, y: snake[0].y};
+    
+    // Move head based on direction
+    switch(snakeDirection) {
+        case 'up':
+            head.y -= 10;
+            break;
+        case 'down':
+            head.y += 10;
+            break;
+        case 'left':
+            head.x -= 10;
+            break;
+        case 'right':
+            head.x += 10;
+            break;
+    }
+    
+    // Check wall collision
+    if (head.x < 0 || head.x >= snakeCanvas.width || head.y < 0 || head.y >= snakeCanvas.height) {
+        snakeGameOver();
+        return;
+    }
+    
+    // Check self collision
+    if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        snakeGameOver();
+        return;
+    }
+    
+    snake.unshift(head);
+    
+    // Check food collision
+    if (head.x === snakeFood.x && head.y === snakeFood.y) {
+        snakeScore += 10;
+        document.getElementById('snakeScore').textContent = snakeScore;
+        snakeFood = generateSnakeFood();
+    } else {
+        snake.pop();
+    }
+}
+
+function snakeGameOver() {
+    snakeRunning = false;
+    clearInterval(snakeLoop);
+    
+    if (snakeScore > snakeHighScore) {
+        snakeHighScore = snakeScore;
+        gameStats.snakeHighScore = snakeHighScore;
+        localStorage.setItem('snakeHighScore', snakeHighScore);
+        document.getElementById('snakeHighScore').textContent = snakeHighScore;
+    }
+    
+    alert(`Game Over! Your score: ${snakeScore}`);
+}
+
+function snakeGameUpdate() {
+    if (snakeRunning && !snakePaused) {
+        moveSnake();
+        drawSnake();
+    }
+}
+
+// Snake game control functions
+function startSnakeGame() {
+    if (!snakeRunning) {
+        snakeRunning = true;
+        snakePaused = false;
+        snakeDirection = 'right';
+        snakeNextDirection = 'right';
+        snakeLoop = setInterval(snakeGameUpdate, 150);
+    }
+}
+
+function pauseSnakeGame() {
+    if (snakeRunning) {
+        snakePaused = !snakePaused;
+    }
+}
+
+function resetSnakeGame() {
+    snakeRunning = false;
+    snakePaused = false;
+    clearInterval(snakeLoop);
+    initSnakeGame();
+}
+
+// Handle keyboard input for Snake game
+document.addEventListener('keydown', function(e) {
+    if (!snakeRunning || currentGame !== 'snake') return;
+    
+    switch(e.key) {
+        case 'ArrowUp':
+        case 'w':
+        case 'W':
+            if (snakeDirection !== 'down') snakeNextDirection = 'up';
+            break;
+        case 'ArrowDown':
+        case 's':
+        case 'S':
+            if (snakeDirection !== 'up') snakeNextDirection = 'down';
+            break;
+        case 'ArrowLeft':
+        case 'a':
+        case 'A':
+            if (snakeDirection !== 'right') snakeNextDirection = 'left';
+            break;
+        case 'ArrowRight':
+        case 'd':
+        case 'D':
+            if (snakeDirection !== 'left') snakeNextDirection = 'right';
+            break;
+    }
+});
+
+// Update snake direction at the start of each game loop
+setInterval(() => {
+    if (snakeRunning && !snakePaused && currentGame === 'snake') {
+        snakeDirection = snakeNextDirection;
+    }
+}, 150);
 
 // Utility functions
 const Utils = {

@@ -294,14 +294,19 @@
                     <div id="gameSelection" class="text-center">
                         <h6 class="mb-4">Choose a game to play:</h6>
                         <div class="row g-3">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <button class="btn btn-outline-primary btn-lg w-100" onclick="selectGame('tic-tac-toe')">
                                     <i class="fas fa-times me-2"></i>Tic Tac Toe
                                 </button>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <button class="btn btn-outline-success btn-lg w-100" onclick="selectGame('connect-four')">
                                     <i class="fas fa-circle me-2"></i>Connect 4
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-warning btn-lg w-100" onclick="selectGame('snake')">
+                                    <i class="fas fa-gamepad me-2"></i>Snake
                                 </button>
                             </div>
                         </div>
@@ -350,6 +355,40 @@
                             <button class="btn btn-secondary" onclick="backToGameSelection()">
                                 <i class="fas fa-arrow-left me-1"></i>Back to Games
                             </button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game -->
+                    <div id="snake-game" class="game-container" style="display: none;">
+                        <div class="text-center mb-3">
+                            <h6>Snake Game</h6>
+                            <div class="game-info mb-3">
+                                <span class="badge bg-success me-2">Score: <span id="snakeScore">0</span></span>
+                                <span class="badge bg-info">High Score: <span id="snakeHighScore">0</span></span>
+                            </div>
+                        </div>
+                        <div class="game-board" id="snakeGameBoard">
+                            <canvas id="snakeCanvas" width="400" height="400" style="border: 2px solid #007bff; border-radius: 10px; background-color: #000;"></canvas>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-success me-2" onclick="startSnakeGame()">
+                                <i class="fas fa-play me-1"></i>Start Game
+                            </button>
+                            <button class="btn btn-warning me-2" onclick="pauseSnakeGame()">
+                                <i class="fas fa-pause me-1"></i>Pause
+                            </button>
+                            <button class="btn btn-danger me-2" onclick="resetSnakeGame()">
+                                <i class="fas fa-redo me-1"></i>Reset
+                            </button>
+                            <button class="btn btn-secondary" onclick="backToGameSelection()">
+                                <i class="fas fa-arrow-left me-1"></i>Back to Games
+                            </button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                <i class="fas fa-keyboard me-1"></i>
+                                Use arrow keys or WASD to control the snake. Eat the red food to grow and increase your score!
+                            </small>
                         </div>
                     </div>
                 </div>
