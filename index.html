@@ -237,6 +237,64 @@
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <div class="card-body">
+                                    <h5 class="card-title">UC Berkeley Sensor Data - Interpolation</h5>
+                                    <p class="card-text">
+                                        Implemented a Hampel filter using SQL to identify outliers by calculating the median 
+                                        and median absolute deviation for each group, and applied winsorization by capping 
+                                        outlier values. Performed interpolation by identifying data gaps and generating 
+                                        interpolated values based on linear progression across gap sizes.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge bg-secondary">PostgreSQL</span>
+                                        <span class="badge bg-secondary">JSON</span>
+                                        <span class="badge bg-secondary">Data Analysis</span>
+                                        <span class="badge bg-secondary">SQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fielding Query Performance - Baseball</h5>
+                                    <p class="card-text">
+                                        Optimized query performance by setting appropriate indexes, applying filters, 
+                                        clustering data on indexed columns, and creating materialized views. Developed 
+                                        queries from Lahman's Baseball Database to analyze MLB player metrics and salary 
+                                        data, exploring various join strategies and query optimization techniques.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge bg-secondary">PostgreSQL</span>
+                                        <span class="badge bg-secondary">Database Engineering</span>
+                                        <span class="badge bg-secondary">Query Optimization</span>
+                                        <span class="badge bg-secondary">SQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Disaster Tweet Classification using NLP</h5>
+                                    <p class="card-text">
+                                        Preprocessed tweet text with NLTK, regex, and stopword removal to clean noisy 
+                                        real-world data. Trained and compared logistic regression, random forest, and SVM 
+                                        classifiers on labeled tweet dataset to detect disaster-related content. 
+                                        Achieved F1 score of 0.75 using SVM model.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge bg-secondary">Python</span>
+                                        <span class="badge bg-secondary">Pandas</span>
+                                        <span class="badge bg-secondary">scikit-learn</span>
+                                        <span class="badge bg-secondary">NLTK</span>
+                                        <span class="badge bg-secondary">Machine Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
                                     <h5 class="card-title">KeyQuest Game</h5>
                                     <p class="card-text">
                                         A 2D tile-based world exploration game built in Java with customizable tiles 

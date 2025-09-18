@@ -27,16 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
         projects: {
             title: "Projects",
             questions: [
+                "Tell me about the UC Berkeley Sensor Data project",
+                "What is the Baseball Query Performance project?",
+                "Tell me about the Disaster Tweet Classification project",
                 "Tell me about the KeyQuest Game project",
                 "What is the WordNet & NGram Viewer?",
                 "What technologies were used?",
                 "What are the key features?"
             ],
             responses: {
+                "sensor data": "The UC Berkeley Sensor Data project involved implementing a Hampel filter using SQL to identify outliers by calculating the median and median absolute deviation for each group, and applied winsorization by capping outlier values. JohnMatthew also performed interpolation by identifying data gaps and generating interpolated values based on linear progression across gap sizes using PostgreSQL and JSON.",
+                "baseball": "The Fielding Query Performance project focused on optimizing query performance by setting appropriate indexes, applying filters, clustering data on indexed columns, and creating materialized views. JohnMatthew developed queries from Lahman's Baseball Database to analyze MLB player metrics and salary data, exploring various join strategies and query optimization techniques.",
+                "disaster tweet": "The Disaster Tweet Classification project used NLP techniques to preprocess tweet text with NLTK, regex, and stopword removal to clean noisy real-world data. JohnMatthew trained and compared logistic regression, random forest, and SVM classifiers on labeled tweet dataset to detect disaster-related content, achieving an F1 score of 0.75 using the SVM model.",
                 "keyquest": "KeyQuest is a 2D tile-based world exploration game built in Java. It features customizable tiles and avatars, random room generation algorithms, and near-sight functionality for immersive gameplay. The project demonstrates strong algorithmic thinking and game development skills.",
                 "wordnet": "The WordNet & NGram Viewer is a sophisticated data structure project where JohnMatthew developed a unique graph class in Java managing 80,000+ words and 400,000+ relationships. He created an NGram Viewer that displays word occurrences in large text corpora with interactive visualization.",
-                "technologies": "JohnMatthew's projects use: Java for core development, Data Structures and Algorithms, Graph Theory, Web Development for visualization, and Game Development principles.",
-                "features": "Key features include: Random room generation algorithms, Interactive data visualization, Graph-based word relationships, Customizable game elements, and Near-sight gameplay mechanics."
+                "technologies": "JohnMatthew's projects use: Python (Pandas, scikit-learn, NLTK), PostgreSQL, SQL, Java, Data Structures and Algorithms, Graph Theory, Web Development, Machine Learning, Natural Language Processing, and Database Engineering.",
+                "features": "Key features include: SQL-based outlier detection and interpolation, Query optimization and database engineering, Machine learning classification with NLP, Random room generation algorithms, Interactive data visualization, Graph-based word relationships, and Customizable game elements."
             }
         },
         skills: {
