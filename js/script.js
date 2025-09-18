@@ -1,4 +1,4 @@
-// JavaScript for JohnMatthew's AI-Powered Resume Website
+// JavaScript for JohnMatthew Garcia's Website
 
 document.addEventListener('DOMContentLoaded', function() {
     // AI Chatbot functionality
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavLink();
     updateNavbarBackground();
     
-    console.log('JohnMatthew AI-Powered Resume Website loaded successfully!');
+    console.log('JohnMatthew Garcia Website loaded successfully!');
 });
 
 // Mini Games - Tic Tac Toe, Connect 4, and Snake
