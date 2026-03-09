@@ -67,7 +67,7 @@
                                     <div class="profile-education-group">
                                         <div class="profile-education-row">
                                             <img src="images/gt.jpg" alt="Georgia Tech Logo" class="school-logo me-2">
-                                            <span>MS CS'26 (Incoming)</span>
+                                            <span>MS CS'26</span>
                                         </div>
                                         <div class="profile-education-row">
                                             <img src="images/cdss.jpg" alt="UC Berkeley Logo" class="school-logo me-2">
@@ -86,7 +86,7 @@
                                         </a>
                                     </div>
                                     <div class="profile-buttons mt-2">
-                                        <a href="attached_assets/jmg_resume_data.pdf" class="btn btn-outline-danger btn-sm" target="_blank">
+                                        <a href="attached_assets/JMG Resume.pdf" class="btn btn-outline-danger btn-sm" target="_blank">
                                             <i class="fas fa-file-pdf me-1"></i>Resume PDF
                                         </a>
                                     </div>
@@ -199,7 +199,7 @@
                                             <h5 class="card-title mb-1">Undergraduate Technician</h5>
                                             <h6 class="card-subtitle text-muted">UC Berkeley – D-Lab</h6>
                                         </div>
-                                        <span class="badge bg-primary">Jan 2024 - Present</span>
+                                        <span class="badge bg-outline-secondary">Jan 2024 - Present</span>
                                     </div>
                                     <p class="card-text mb-3">
                                         Provided cross-disciplinary services by delivering in-depth consulting, 
@@ -231,64 +231,6 @@
                         <i class="fas fa-brain me-3"></i>AI & Data Science Projects
                     </h2>
                     <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">UC Berkeley Sensor Data - Interpolation</h5>
-                                    <p class="card-text">
-                                        Implemented a Hampel filter using SQL to identify outliers by calculating the median 
-                                        and median absolute deviation for each group, and applied winsorization by capping 
-                                        outlier values. Performed interpolation by identifying data gaps and generating 
-                                        interpolated values based on linear progression across gap sizes.
-                                    </p>
-                                    <div class="d-flex flex-wrap gap-2 mb-3">
-                                        <span class="badge bg-secondary">PostgreSQL</span>
-                                        <span class="badge bg-secondary">JSON</span>
-                                        <span class="badge bg-secondary">Data Analysis</span>
-                                        <span class="badge bg-secondary">SQL</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Fielding Query Performance - Baseball</h5>
-                                    <p class="card-text">
-                                        Optimized query performance by setting appropriate indexes, applying filters, 
-                                        clustering data on indexed columns, and creating materialized views. Developed 
-                                        queries from Lahman's Baseball Database to analyze MLB player metrics and salary 
-                                        data, exploring various join strategies and query optimization techniques.
-                                    </p>
-                                    <div class="d-flex flex-wrap gap-2 mb-3">
-                                        <span class="badge bg-secondary">PostgreSQL</span>
-                                        <span class="badge bg-secondary">Database Engineering</span>
-                                        <span class="badge bg-secondary">Query Optimization</span>
-                                        <span class="badge bg-secondary">SQL</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Disaster Tweet Classification using NLP</h5>
-                                    <p class="card-text">
-                                        Preprocessed tweet text with NLTK, regex, and stopword removal to clean noisy 
-                                        real-world data. Trained and compared logistic regression, random forest, and SVM 
-                                        classifiers on labeled tweet dataset to detect disaster-related content. 
-                                        Achieved F1 score of 0.75 using SVM model.
-                                    </p>
-                                    <div class="d-flex flex-wrap gap-2 mb-3">
-                                        <span class="badge bg-secondary">Python</span>
-                                        <span class="badge bg-secondary">Pandas</span>
-                                        <span class="badge bg-secondary">scikit-learn</span>
-                                        <span class="badge bg-secondary">NLTK</span>
-                                        <span class="badge bg-secondary">Machine Learning</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <div class="card-body">
@@ -325,131 +267,14 @@
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <button class="btn btn-primary btn-lg" onclick="openMiniGames()" style="border-radius: 2em; font-weight: 600;">
-                            <i class="fas fa-gamepad me-2"></i>Mini Games
-                        </button>
+                        <a href="https://johnmgarcia.github.io/Mini-Game-App/" target="_blank" class="btn btn-primary btn-lg" style="border-radius: 2em; font-weight: 600;">
+                            <i class="fas fa-gamepad me-2"></i>Mini Game
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Mini Games Modal -->
-    <div class="modal fade" id="miniGamesModal" tabindex="-1" aria-labelledby="miniGamesModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="miniGamesModalLabel">
-                        <i class="fas fa-gamepad me-2"></i>Mini Games
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Game Selection -->
-                    <div id="gameSelection" class="text-center">
-                        <h6 class="mb-4">Choose a game to play:</h6>
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <button class="btn btn-outline-warning btn-lg w-100" onclick="selectGame('snake')">
-                                    <i class="fas fa-gamepad me-2"></i>Snake
-                                </button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-outline-primary btn-lg w-100" onclick="selectGame('tic-tac-toe')">
-                                    <i class="fas fa-times me-2"></i>Tic Tac Toe
-                                </button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-outline-success btn-lg w-100" onclick="selectGame('connect-four')">
-                                    <i class="fas fa-circle me-2"></i>Connect 4
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tic Tac Toe Game -->
-                    <div id="tic-tac-toe-game" class="game-container" style="display: none;">
-                        <div class="text-center mb-3">
-                            <h6>Tic Tac Toe</h6>
-                            <div class="game-info mb-3">
-                                <span class="badge bg-primary me-2">Current Player: <span id="currentPlayer">X</span></span>
-                                <span class="badge bg-success me-2">X Wins: <span id="xWins">0</span></span>
-                                <span class="badge bg-info">O Wins: <span id="oWins">0</span></span>
-                            </div>
-                        </div>
-                        <div class="game-board" id="ticTacToeBoard">
-                            <!-- Tic Tac Toe board will be generated here -->
-                        </div>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-warning me-2" onclick="resetTicTacToe()">
-                                <i class="fas fa-redo me-1"></i>Reset Game
-                            </button>
-                            <button class="btn btn-secondary" onclick="backToGameSelection()">
-                                <i class="fas fa-arrow-left me-1"></i>Back to Games
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Connect 4 Game -->
-                    <div id="connect-four-game" class="game-container" style="display: none;">
-                        <div class="text-center mb-3">
-                            <h6>Connect 4</h6>
-                            <div class="game-info mb-3">
-                                <span class="badge bg-primary me-2">Current Player: <span id="currentPlayerCF">Red</span></span>
-                                <span class="badge bg-danger me-2">Red Wins: <span id="redWins">0</span></span>
-                                <span class="badge bg-warning">Yellow Wins: <span id="yellowWins">0</span></span>
-                            </div>
-                        </div>
-                        <div class="game-board" id="connectFourBoard">
-                            <!-- Connect 4 board will be generated here -->
-                        </div>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-warning me-2" onclick="resetConnectFour()">
-                                <i class="fas fa-redo me-1"></i>Reset Game
-                            </button>
-                            <button class="btn btn-secondary" onclick="backToGameSelection()">
-                                <i class="fas fa-arrow-left me-1"></i>Back to Games
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Snake Game -->
-                    <div id="snake-game" class="game-container" style="display: none;">
-                        <div class="text-center mb-3">
-                            <h6>Snake Game</h6>
-                            <div class="game-info mb-3">
-                                <span class="badge bg-success me-2">Score: <span id="snakeScore">0</span></span>
-                                <span class="badge bg-info">High Score: <span id="snakeHighScore">0</span></span>
-                            </div>
-                        </div>
-                        <div class="game-board" id="snakeGameBoard">
-                            <canvas id="snakeCanvas" width="400" height="400" style="border: 2px solid #007bff; border-radius: 10px; background-color: #000;"></canvas>
-                        </div>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-success me-2" onclick="startSnakeGame()">
-                                <i class="fas fa-play me-1"></i>Start Game
-                            </button>
-                            <button class="btn btn-warning me-2" onclick="pauseSnakeGame()">
-                                <i class="fas fa-pause me-1"></i>Pause
-                            </button>
-                            <button class="btn btn-danger me-2" onclick="resetSnakeGame()">
-                                <i class="fas fa-redo me-1"></i>Reset
-                            </button>
-                            <button class="btn btn-secondary" onclick="backToGameSelection()">
-                                <i class="fas fa-arrow-left me-1"></i>Back to Games
-                            </button>
-                        </div>
-                        <div class="text-center mt-3">
-                            <small class="text-muted">
-                                <i class="fas fa-keyboard me-1"></i>
-                                Use arrow keys or WASD to control the snake. Eat the red food to grow and increase your score!
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Coffee Chat Modal -->
     <div class="modal fade" id="coffeeChatModal" tabindex="-1" aria-labelledby="coffeeChatModalLabel" aria-hidden="true">
